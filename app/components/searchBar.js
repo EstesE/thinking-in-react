@@ -1,22 +1,26 @@
+import Form from 'react-bootstrap/Form';
+import FloatingLabel from 'react-bootstrap/FloatingLabel';
+
 const SearchBar = ({ filterText, inStockOnly, onFilterTextChange, onInStockOnlyChange }) => {
   return (
-    <form>
-      <input
-        type="text"
-        placeholder="Search..."
-        value={filterText}
-        onChange={(e) => onFilterTextChange(e.target.value)}
-      />
+    <Form>
+      <FloatingLabel
+        controlId="floatingInput"
+        label="Search..."
+        className="mb-3"
+      >
+        <Form.Control type="text" placeholder="fruit" value={filterText} onChange={(e) => onFilterTextChange(e.target.value)} />
+      </FloatingLabel>
       <label>
-        <input
-          type="checkbox"
+        <Form.Check 
+          type="switch"
+          id="custom-switch"
+          label="In Stock Only"
           checked={inStockOnly}
           onChange={(e) => onInStockOnlyChange(e.target.checked)}
         />
-        {' '}
-        Only show products in stock
       </label>
-    </form>
+    </Form>
   );
 };
 

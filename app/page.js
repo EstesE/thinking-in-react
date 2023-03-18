@@ -18,7 +18,6 @@ const Home = () => {
     <>
       <Navigation />
       <main className={styles.main}>
-        <Link href={'/about'}>About</Link>
         <FilterableProductTable products={PRODUCTS} />
       </main>
     </>
