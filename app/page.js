@@ -1,5 +1,8 @@
-import FilterableProductTable from '@/components/filterableProductTable';
+import FilterableProductTable from '@/app/components/filterableProductTable';
+import Link from 'next/link';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import styles from './page.module.css'
+import Navigation from '@/app/components/navigation';
 
 const PRODUCTS = [
   {category: "Fruits", price: "$1", stocked: true, name: "Apple"},
@@ -12,9 +15,13 @@ const PRODUCTS = [
 
 const Home = () => {
   return (
-    <main className={styles.main}>
-      <FilterableProductTable products={PRODUCTS} />
-    </main>
+    <>
+      <Navigation />
+      <main className={styles.main}>
+        <Link href={'/about'}>About</Link>
+        <FilterableProductTable products={PRODUCTS} />
+      </main>
+    </>
   );
 };
 
